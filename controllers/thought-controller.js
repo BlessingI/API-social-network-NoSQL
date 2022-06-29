@@ -33,22 +33,18 @@ const thoughtController = {
   },
 
   updateThoughts({ params, body }, res) {
-    Thought.findOneAndUpdate({ _id: params.id }, body, {
-      new: true,
-    })
-      .populate({ path: "reactions", select: "-__v" })
-      .select("-___v")
-      .then((dbThoughtsData) => {
-        if (!dbThoughtsData) {
-          res
-            .status(404)
-            .json({ message: "No thoughts with this particular ID!" });
+    console.log("new bod is", body)
+    Thought.findOneAndUpdate({ _id: params.id }, body, { new: true })
+      .then((dbThoughtData) => {
+        if (!dbThoughtData) {
+          res.status(404).json({ message: "No Thought found with this id!" });
           return;
         }
-        res.json(dbThoughtsData);
+        res.json(dbThoughtData);
       })
-      .catch((err) => res.json(err));
+      .catch((err) => res.status(400).json(err));
   },
+
 
   addThought({ params, body }, res) {
     Thought.create(body)
