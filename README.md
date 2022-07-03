@@ -3,6 +3,8 @@
 
 An API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.
 
+[Click on the link to see a video of the application](https://youtu.be/_dtVy3fFdjQ)
+
 ## User Story
 
 ```
@@ -42,3 +44,7 @@ Contact me with any questions: [Email](mailto:bigbadumhe@gmail.com) , [GitHub](h
 
 ## Repo
 https://github.com/BlessingI/API-social-network-NoSQL.git
+
+### Website Screenshot
+
+![Nosql Social Network](assets/images/Nosql-insomnia-sample.png)
